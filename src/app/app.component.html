@@ -14,8 +14,7 @@
     </div>
     
     <!-- video player -->
-    <video id="video" width="100%" height="100%" style="object-fit: cover;"
-        (timeupdate)="onTimeUpdate()" (click)="videoPlay()">
+    <video id="video" loop (timeupdate)="onTimeUpdate()" (click)="videoPlay()">
         <source src="../assets/video/videoplayback.mp4" type="video/mp4">
     </video>
 
@@ -38,8 +37,8 @@
                         <img *ngIf="!volumeButton" src="../assets/img/mute-icon.svg" alt="mute-icon"
                             (click)="videoVolume()">
                     </div>
-                    <div id="play_button">
-                        <img src="../assets/img/pause-icon.svg" alt="pause-icon" (click)="videoPlay()">
+                    <div id="play_button" (click)="videoPlay()">
+                        <img src="../assets/img/pause-icon.svg" alt="pause-icon">
                     </div>
                 </div>
             </div>

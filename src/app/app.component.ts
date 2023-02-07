@@ -23,15 +23,13 @@ export class AppComponent implements OnInit {
     let video = <HTMLVideoElement>document.getElementById("video");
     let playButton = document.getElementById("play_button");
 
-    playButton.addEventListener("click", function () {
-      if (video.paused == true) {
-        video.play();
-        playButton.innerHTML = '<img src="../assets/img/play-icon.svg" alt="play-icon" (click)="videoPlay()">';
-      } else {
-        video.pause();
-        playButton.innerHTML = '<img src="../assets/img/pause-icon.svg" alt="pause-icon" (click)="videoPlay()">'
-      }
-    });
+    if (video.paused) {
+      video.play();
+      playButton.innerHTML = '<img src="../assets/img/play-icon.svg" alt="play-icon" (click)="videoPlay()">';
+    } else {
+      video.pause();
+      playButton.innerHTML = '<img src="../assets/img/pause-icon.svg" alt="pause-icon" (click)="videoPlay()">'
+    }
   }
 
   onTimeUpdate(){
