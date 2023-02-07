@@ -15,6 +15,11 @@ export class AppComponent implements OnInit {
     this.video = <HTMLVideoElement>document.getElementById("video");
   }
 
+  viewModeChange(mode: number) {
+    this.viewMode = !this.viewMode;
+    this.video.muted = (mode == 1) ? true : false;
+  }
+
   videoVolume() {
     this.video.muted = !this.video.muted;
     this.volumeButton = this.video.muted ? false : true;
