@@ -8,7 +8,7 @@
     --white:           #ffffff;
   
     --base-font-size:   16px;
-    --base-background:  #ccc;
+    --base-background:  #C0C0C0;
     --base-color:       #000;
     --base-font-family: 'Nunito', sans-serif;
   
@@ -70,6 +70,9 @@ app-root{
     width: 100%;
     justify-content: flex-end;
   }
+  video {
+    object-fit: cover;
+  }
   .content-bar {
     position: absolute;
     bottom: 0;
@@ -77,12 +80,9 @@ app-root{
   .player__content {
     padding: 0px 20px;
   }
-  .player__content > div >:not(.__actions){
+  .player__content > div >:not(.__actions) {
     flex: 1;
     padding-right: 10px;
-  }
-  .__actions svg[name="audio"] path{
-    fill: var(--white);
   }
   .__title {
     color: var(--white);
@@ -126,6 +126,9 @@ app-root{
       background: var(--white);
       width: 0%;
       transition: width 0.25s ease;
+  }
+  .volume_button {
+    margin-bottom: 8px;
   }
   
   /* mobile  */
