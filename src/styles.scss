@@ -113,3 +113,20 @@ app-root{
   .cta__btn > img {
    margin-left: 6px;
   }
+  /* progress bar */
+
+ .progress-bar {
+    margin-top: 15px;
+    width: 100%;
+    border: 0px solid black;
+  }
+  .progress-bar span{
+      height: 5px;
+      display:block;
+      background: var(--white);
+      width: 0%;
+      transition: width 0.25s ease;
+  }
+  // #container button:active, #container button:focus{
+  //     outline: none;
+  // }

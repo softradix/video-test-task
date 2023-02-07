@@ -13,7 +13,7 @@
         </div>
     </div>
     <!-- video player -->
-    <video autoplay="" name="media" width="100%" height="100%" style="object-fit: cover;">
+    <video id="video" autoplay="true" name="media" width="100%" height="100%" style="object-fit: cover;" (timeupdate)="onTimeUpdate()">
         <source src="../assets/video/videoplayback.mp4" type="video/mp4">
     </video>
     <!-- player discription -->
@@ -26,12 +26,13 @@
                     <b>A widget you can use to upload videos and get personal with your customers to schedule meetings, ask for reviews, or share the latest features with its CTA functionality.</b>
                     </p>
             </div>
+            <!-- actions -->
             <div class="__actions">
                 <div>
-                   <img src="../assets/img/unmute-icon.svg" alt="unmute-icon">
+                   <img src="../assets/img/unmute-icon.svg" alt="unmute-icon" id="mute_text" (click)="videoMute()">
                 </div>
                 <div>
-                    <img src="../assets/img/play-icon.svg" alt="play-icon">
+                    <img src="../assets/img/play-icon.svg" alt="play-icon" id="play_button" (click)="videoPlay()">
                 </div>
             </div>
         </div>
@@ -40,6 +41,10 @@
        <img src="../assets/img/readmore-icon.svg" alt="readmore-icon">
         </button>
        </div>
+       <div class="progress-bar">
+        <span [style.width]="percentage + '%'">
+        </span>
+    </div>
     </div>
 </div>
 
