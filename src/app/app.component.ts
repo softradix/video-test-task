@@ -1,58 +1,40 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'facepop';
+export class AppComponent implements OnInit {
   video: any;
-  button_text: string;
-  videoPlaying:boolean;
+  volumeButton: boolean;
   percentage: number;
-  ngOninit() {
+
+  ngOnInit(): void {
     this.video = <HTMLVideoElement>document.getElementById("video");
   }
-  videoMute() {
-    // let video = <HTMLVideoElement>document.getElementById("video");
-    let mute_text = document.getElementById("mute_text");
-    console.log("mute_text", !this.video.muted)
+
+  videoVolume() {
     this.video.muted = !this.video.muted;
+    this.volumeButton = this.video.muted ? false : true;
   }
+
   videoPlay() {
     let video = <HTMLVideoElement>document.getElementById("video");
     let playButton = document.getElementById("play_button");
-    // Event listener for the play/pause button
+
     playButton.addEventListener("click", function () {
       if (video.paused == true) {
-        // Play the video
         video.play();
-        // Update the button text to 'Pause'
-        playButton.innerHTML = "Pause";
+        playButton.innerHTML = '<img src="../assets/img/play-icon.svg" alt="play-icon" (click)="videoPlay()">';
       } else {
-        // Pause the video
         video.pause();
-        // Update the button text to 'Play'
-        playButton.innerHTML = "Play";
+        playButton.innerHTML = '<img src="../assets/img/pause-icon.svg" alt="pause-icon" (click)="videoPlay()">'
       }
     });
-    // if(!this.videoPlaying){
-    //   this.video.play();
-    //   this.videoPlaying = true;
-    // }else{
-    //   this.video.pause();
-    //   this.videoPlaying = false;
-    // }
   }
+
   onTimeUpdate(){
-    let video = <HTMLVideoElement>document.getElementById("video");
-    this.percentage = (video.currentTime / video.duration) * 100;
+    this.percentage = (this.video.currentTime / this.video.duration) * 100;
   }
 }
-
-
-
-
-
-
-
