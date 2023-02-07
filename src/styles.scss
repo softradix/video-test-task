@@ -1,6 +1,5 @@
 :root{
-    --primary-color:   green;
-    --secoundry-color: grey;
+    --primary-color:   #1b5cf3;
   
     --primary-button:  #0076c6;
     --secondary-button:#333333;
@@ -11,10 +10,14 @@
     --base-font-size:   16px;
     --base-background:  #ccc;
     --base-color:       #000;
-    --base-font-family: "Roboto", sans-serif;
+    --base-font-family: 'Nunito', sans-serif;
   
-    --player-shadow: #333c52;
-    --player-radius:   10px
+    --player-shadow:    #333c52;
+    --player-radius:      10px;
+    --player-titleSize:   21px;
+    --player-descriptionSize: 13px;
+    --player-ctaSize:         18px;
+    --player-ctabg:       #1b5cf3
   }
   *{
     box-sizing: border-box;
@@ -29,7 +32,24 @@
     color: var(--base-color);
     font-family: var(--base-font-family);
   }
+  .d-none {
+    display: none;
+  }
+  .align-items-end {
+    align-items: flex-end;
+  }
+  .align-items-center {
+    align-items: center;
+  }
+  img {
+    cursor: pointer;
+  }
 /* player */
+app-root{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
 .player {
     width: 332px;
     height: 663px;
@@ -37,6 +57,7 @@
     box-shadow: var(--player-shadow) 0 3px 8px;
     border-radius: var(--player-radius);
     position: relative;
+    overflow: hidden;
   }
   .d-flex {
     display: flex;
@@ -44,12 +65,51 @@
   .auther-bar {
     position: absolute;
     top: 0;
+    padding: 20px 20px 0;
+    z-index: 1;
+    width: 100%;
+    justify-content: flex-end;
   }
   .content-bar {
     position: absolute;
     bottom: 0;
   }
-    .__actions svg {
-      width: 20px;
-      height: 20px;
-    }
+  .player__content {
+    padding: 0px 20px;
+  }
+  .player__content > div >:not(.__actions){
+    flex: 1;
+    padding-right: 10px;
+  }
+  .__actions svg[name="audio"] path{
+    fill: var(--white);
+  }
+  .__title {
+    color: var(--white);
+    font-size: var(--player-titleSize);
+    font-weight: 700;
+    line-height: 1.5;
+  }
+  .__disc {
+    color: var(--white);
+    font-size: var(--player-descriptionSize);
+    font-weight: 700;
+  }
+  .cta__btn {
+    width: 100%;
+    height: 40px;
+    border: none;
+    background: var(--player-ctabg);
+    color: var(--white);
+    font-size: var(--player-ctaSize);
+    font-family: var(--base-font-family);
+    font-weight: 700;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0px;
+    cursor: pointer;
+  }
+  .cta__btn > img {
+   margin-left: 6px;
+  }
