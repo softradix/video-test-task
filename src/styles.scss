@@ -1,1 +1,55 @@
-/* You can add global styles to this file, and also import other style files */
+:root{
+    --primary-color:   green;
+    --secoundry-color: grey;
+  
+    --primary-button:  #0076c6;
+    --secondary-button:#333333;
+    --error:           #ce0606;
+    --success:         #009070;
+    --white:           #ffffff;
+  
+    --base-font-size:   16px;
+    --base-background:  #ccc;
+    --base-color:       #000;
+    --base-font-family: "Roboto", sans-serif;
+  
+    --player-shadow: #333c52;
+    --player-radius:   10px
+  }
+  *{
+    box-sizing: border-box;
+    margin: 0px; 
+  }
+  ul,li {
+    list-style: none;    
+  }
+  body {
+    font-size: var(--base-font-size);
+    background-color: var(--base-background);
+    color: var(--base-color);
+    font-family: var(--base-font-family);
+  }
+/* player */
+.player {
+    width: 332px;
+    height: 663px;
+    margin: 0px auto;
+    box-shadow: var(--player-shadow) 0 3px 8px;
+    border-radius: var(--player-radius);
+    position: relative;
+  }
+  .d-flex {
+    display: flex;
+  }
+  .auther-bar {
+    position: absolute;
+    top: 0;
+  }
+  .content-bar {
+    position: absolute;
+    bottom: 0;
+  }
+    .__actions svg {
+      width: 20px;
+      height: 20px;
+    }
