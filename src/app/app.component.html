@@ -14,8 +14,8 @@
     </div>
     
     <!-- video player -->
-    <video id="video" autoplay="true" name="media" width="100%" height="100%" style="object-fit: cover;"
-        (timeupdate)="onTimeUpdate()">
+    <video id="video" width="100%" height="100%" style="object-fit: cover;"
+        (timeupdate)="onTimeUpdate()" (click)="videoPlay()">
         <source src="../assets/video/videoplayback.mp4" type="video/mp4">
     </video>
 
@@ -43,7 +43,7 @@
                     </div>
                 </div>
             </div>
-            <button class="cta__btn d-flex">
+            <button class="cta__btn d-flex" (click)="goToLink()">
                 Read About Facepop
                 <img src="../assets/img/readmore-icon.svg" alt="readmore-icon">
             </button>

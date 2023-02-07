@@ -51,7 +51,7 @@ app-root{
   align-items: center;
 }
 .player {
-    width: 332px;
+    width: 337px;
     height: 663px;
     margin: 0px auto;
     box-shadow: var(--player-shadow) 0 3px 8px;
@@ -127,6 +127,11 @@ app-root{
       width: 0%;
       transition: width 0.25s ease;
   }
-  // #container button:active, #container button:focus{
-  //     outline: none;
-  // }
+  
+  /* mobile  */
+  @media (max-width: 767px) {
+    .player {
+      width: 94%;
+      height: 98vh;
+     }
+  }

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   video: any;
-  volumeButton: boolean;
+  volumeButton = true;
   percentage: number;
 
   ngOnInit(): void {
@@ -36,5 +36,9 @@ export class AppComponent implements OnInit {
 
   onTimeUpdate(){
     this.percentage = (this.video.currentTime / this.video.duration) * 100;
+  }
+
+  goToLink() {
+    window.open("https://answerly.io/facepop/", "_blank")
   }
 }
