@@ -9,6 +9,7 @@ export class AppComponent implements OnInit {
   video: any;
   volumeButton = true;
   percentage: number;
+  viewMode = true;
 
   ngOnInit(): void {
     this.video = <HTMLVideoElement>document.getElementById("video");

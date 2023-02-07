@@ -1,5 +1,5 @@
 <!-- player frame -->
-<div class="player">
+<div class="player" [ngClass]="viewMode ? '' : 'd-none'">
     <!-- auther name -->
     <div class="d-flex auther-bar">
         <div class="auther d-none">
@@ -8,7 +8,7 @@
                 <p>Pradeep Kumar</p>
             </div>
         </div>
-        <div class="player__minimize-icon">
+        <div class="player__minimize-icon" (click)="viewMode = !viewMode">
             <img src="../assets/img/minimize-icon.svg" alt="">
         </div>
     </div>
@@ -51,4 +51,22 @@
             <span [style.width]="percentage + '%'"></span>
         </div>
     </div>
+</div>
+
+<!-- minimize view -->
+<div class="minimize-view" [ngClass]="!viewMode ? '' : 'd-none'">
+      <!-- icon -->
+        <div class="player__minimize-icon" (click)="viewMode = !viewMode">
+            <img src="../assets/img/plus-lg.svg" alt="plus-lg">
+        </div>
+   
+    <!-- video player -->
+    <video id="video" loop (timeupdate)="onTimeUpdate()" (click)="videoPlay()">
+        <source src="../assets/video/videoplayback.mp4" type="video/mp4">
+    </video>
+    <div class="content-bar">
+        <div class="progress-bar">
+            <span [style.width]="percentage + '%'"></span>
+        </div>
+        </div>
 </div>
